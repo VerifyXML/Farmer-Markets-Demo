@@ -1,0 +1,227 @@
+<as:CAM
+ xmlns:as="http://www.oasis-open.org/committees/cam"
+ xmlns:camed="http://jcam.org.uk/editor"
+ xmlns:xml="http://www.w3.org/XML/1998/namespace"
+ xmlns:xs="http://www.w3.org/2001/XMLSchema" CAMlevel="1" version="1.1" cameditor="3.0.0">
+  <as:Header>
+    <as:Description>No Description</as:Description>
+    <as:Owner>Not Set</as:Owner>
+    <as:Version>0.1</as:Version>
+    <as:DateTime>2013-05-29T10:49:40</as:DateTime>
+    <as:Parameters>
+      <as:Parameter name="verify_FARMMARKET.Markets" default="Zip+in+%28%24ZIPSearch%29" use="dbmapping" />
+    </as:Parameters>
+  </as:Header>
+  <as:AssemblyStructure>
+    <as:Structure ID="FMLookup" taxonomy="XML" reference="">
+      <FarmerMarketsLookup>
+        <FarmerMarketDetails>
+          <UID>%12345%</UID>
+          <Name>%string%</Name>
+          <URL>%string%</URL>
+          <Schedule>%string%</Schedule>
+          <LocationDescription>%string%</LocationDescription>
+          <AddressDetails>
+            <Street>%string%</Street>
+            <City>%string%</City>
+            <County>%string%</County>
+            <State>%string%</State>
+            <Zip>%string%</Zip>
+            <Lat>%124.12345678%</Lat>
+            <Lng>%124.12345678%</Lng>
+          </AddressDetails>
+          <PaymentDetails>
+            <Credit>%string%</Credit>
+            <WIC>%string%</WIC>
+            <WICcash>%string%</WICcash>
+            <SFMNP>%string%</SFMNP>
+            <SNAP>%string%</SNAP>
+          </PaymentDetails>
+          <GoodsDetails>
+            <Bakedgoods>%string%</Bakedgoods>
+            <Cheese>%string%</Cheese>
+            <Crafts>%string%</Crafts>
+            <Flowers>%string%</Flowers>
+            <Eggs>%string%</Eggs>
+            <Seafood>%string%</Seafood>
+            <Herbs>%string%</Herbs>
+            <Vegetables>%string%</Vegetables>
+            <Honey>%string%</Honey>
+            <Jams>%string%</Jams>
+            <Maple>%string%</Maple>
+            <Meat>%string%</Meat>
+            <Nursery>%string%</Nursery>
+            <Nuts>%string%</Nuts>
+            <Plants>%string%</Plants>
+            <Poultry>%string%</Poultry>
+            <Prepared>%string%</Prepared>
+            <Soap>%string%</Soap>
+            <Trees>%string%</Trees>
+            <Wine>%string%</Wine>
+          </GoodsDetails>
+          <UpdatedDate>%string%</UpdatedDate>
+        </FarmerMarketDetails>
+      </FarmerMarketsLookup>
+    </as:Structure>
+  </as:AssemblyStructure>
+  <as:BusinessUseContext>
+    <as:Rules>
+      <as:default>
+        <as:context>
+          <as:constraint action="setNumberMask(//AddressDetails/Lat,###.########)" />
+          <as:constraint action="setNumberMask(//AddressDetails/Lng,###.########)" />
+          <as:constraint action="setNumberMask(//FarmerMarketDetails/UID,#######)" />
+          <as:constraint action="makeRepeatable(//FarmerMarketsLookup/FarmerMarketDetails)" />
+          <as:constraint action="lookup(//GoodsDetails/Bakedgoods,YNList)" />
+          <as:constraint action="lookup(//GoodsDetails/Cheese,YNList)" />
+          <as:constraint action="lookup(//GoodsDetails/Crafts,YNList)" />
+          <as:constraint action="lookup(//GoodsDetails/Eggs,YNList)" />
+          <as:constraint action="lookup(//GoodsDetails/Flowers,YNList)" />
+          <as:constraint action="lookup(//GoodsDetails/Herbs,YNList)" />
+          <as:constraint action="lookup(//GoodsDetails/Honey,YNList)" />
+          <as:constraint action="lookup(//GoodsDetails/Jams,YNList)" />
+          <as:constraint action="lookup(//GoodsDetails/Maple,YNList)" />
+          <as:constraint action="lookup(//GoodsDetails/Meat,YNList)" />
+          <as:constraint action="lookup(//GoodsDetails/Nursery,YNList)" />
+          <as:constraint action="lookup(//GoodsDetails/Nuts,YNList)" />
+          <as:constraint action="lookup(//GoodsDetails/Plants,YNList)" />
+          <as:constraint action="lookup(//GoodsDetails/Poultry,YNList)" />
+          <as:constraint action="lookup(//GoodsDetails/Prepared,YNList)" />
+          <as:constraint action="lookup(//GoodsDetails/Seafood,YNList)" />
+          <as:constraint action="lookup(//GoodsDetails/Soap,YNList)" />
+          <as:constraint action="lookup(//GoodsDetails/Trees,YNList)" />
+          <as:constraint action="lookup(//GoodsDetails/Vegetables,YNList)" />
+          <as:constraint action="lookup(//GoodsDetails/Wine,YNList)" />
+          <as:constraint action="lookup(//PaymentDetails/Credit,YNList)" />
+          <as:constraint action="lookup(//PaymentDetails/SFMNP,YNList)" />
+          <as:constraint action="lookup(//PaymentDetails/SNAP,YNList)" />
+          <as:constraint action="lookup(//PaymentDetails/WIC,YNList)" />
+          <as:constraint action="lookup(//PaymentDetails/WICcash,YNList)" />
+        </as:context>
+      </as:default>
+    </as:Rules>
+  </as:BusinessUseContext>
+  <as:Extension name="uk.org.jcam.camed.extensions.LookupLists">
+    <look:LookupList
+ xmlns:look="http://jcam.org.uk/LookupLists" name="YNList">
+      <look:item name="N">N</look:item>
+      <look:item name="Y">Y</look:item>
+    </look:LookupList>
+  </as:Extension>
+  <as:Extension name="uk.org.jcam.camed.extensions.StructureAnnotations">
+    <camed:annotation item="/FarmerMarketsLookup/FarmerMarketDetails/AddressDetails/City">
+      <camed:documentation type="DBMapping">verify_FARMMARKET.Markets.City</camed:documentation>
+    </camed:annotation>
+    <camed:annotation item="/FarmerMarketsLookup/FarmerMarketDetails/AddressDetails/County">
+      <camed:documentation type="DBMapping">verify_FARMMARKET.Markets.County</camed:documentation>
+    </camed:annotation>
+    <camed:annotation item="/FarmerMarketsLookup/FarmerMarketDetails/AddressDetails/Lat">
+      <camed:documentation type="DBMapping">verify_FARMMARKET.Markets.x</camed:documentation>
+    </camed:annotation>
+    <camed:annotation item="/FarmerMarketsLookup/FarmerMarketDetails/AddressDetails/Lng">
+      <camed:documentation type="DBMapping">verify_FARMMARKET.Markets.y</camed:documentation>
+    </camed:annotation>
+    <camed:annotation item="/FarmerMarketsLookup/FarmerMarketDetails/AddressDetails/State">
+      <camed:documentation type="DBMapping">verify_FARMMARKET.Markets.State</camed:documentation>
+    </camed:annotation>
+    <camed:annotation item="/FarmerMarketsLookup/FarmerMarketDetails/AddressDetails/Street">
+      <camed:documentation type="DBMapping">verify_FARMMARKET.Markets.Street</camed:documentation>
+    </camed:annotation>
+    <camed:annotation item="/FarmerMarketsLookup/FarmerMarketDetails/AddressDetails/Zip">
+      <camed:documentation type="DBMapping">verify_FARMMARKET.Markets.Zip</camed:documentation>
+    </camed:annotation>
+    <camed:annotation item="/FarmerMarketsLookup/FarmerMarketDetails/GoodsDetails/Bakedgoods">
+      <camed:documentation type="DBMapping">verify_FARMMARKET.Markets.Bakedgoods</camed:documentation>
+    </camed:annotation>
+    <camed:annotation item="/FarmerMarketsLookup/FarmerMarketDetails/GoodsDetails/Cheese">
+      <camed:documentation type="DBMapping">verify_FARMMARKET.Markets.Cheese</camed:documentation>
+    </camed:annotation>
+    <camed:annotation item="/FarmerMarketsLookup/FarmerMarketDetails/GoodsDetails/Crafts">
+      <camed:documentation type="DBMapping">verify_FARMMARKET.Markets.Crafts</camed:documentation>
+    </camed:annotation>
+    <camed:annotation item="/FarmerMarketsLookup/FarmerMarketDetails/GoodsDetails/Eggs">
+      <camed:documentation type="DBMapping">verify_FARMMARKET.Markets.Eggs</camed:documentation>
+    </camed:annotation>
+    <camed:annotation item="/FarmerMarketsLookup/FarmerMarketDetails/GoodsDetails/Flowers">
+      <camed:documentation type="DBMapping">verify_FARMMARKET.Markets.Flowers</camed:documentation>
+    </camed:annotation>
+    <camed:annotation item="/FarmerMarketsLookup/FarmerMarketDetails/GoodsDetails/Herbs">
+      <camed:documentation type="DBMapping">verify_FARMMARKET.Markets.Herbs</camed:documentation>
+    </camed:annotation>
+    <camed:annotation item="/FarmerMarketsLookup/FarmerMarketDetails/GoodsDetails/Honey">
+      <camed:documentation type="DBMapping">verify_FARMMARKET.Markets.Honey</camed:documentation>
+    </camed:annotation>
+    <camed:annotation item="/FarmerMarketsLookup/FarmerMarketDetails/GoodsDetails/Jams">
+      <camed:documentation type="DBMapping">verify_FARMMARKET.Markets.Jams</camed:documentation>
+    </camed:annotation>
+    <camed:annotation item="/FarmerMarketsLookup/FarmerMarketDetails/GoodsDetails/Maple">
+      <camed:documentation type="DBMapping">verify_FARMMARKET.Markets.Maple</camed:documentation>
+    </camed:annotation>
+    <camed:annotation item="/FarmerMarketsLookup/FarmerMarketDetails/GoodsDetails/Meat">
+      <camed:documentation type="DBMapping">verify_FARMMARKET.Markets.Meat</camed:documentation>
+    </camed:annotation>
+    <camed:annotation item="/FarmerMarketsLookup/FarmerMarketDetails/GoodsDetails/Nursery">
+      <camed:documentation type="DBMapping">verify_FARMMARKET.Markets.Nursery</camed:documentation>
+    </camed:annotation>
+    <camed:annotation item="/FarmerMarketsLookup/FarmerMarketDetails/GoodsDetails/Nuts">
+      <camed:documentation type="DBMapping">verify_FARMMARKET.Markets.Nuts</camed:documentation>
+    </camed:annotation>
+    <camed:annotation item="/FarmerMarketsLookup/FarmerMarketDetails/GoodsDetails/Plants">
+      <camed:documentation type="DBMapping">verify_FARMMARKET.Markets.Plants</camed:documentation>
+    </camed:annotation>
+    <camed:annotation item="/FarmerMarketsLookup/FarmerMarketDetails/GoodsDetails/Poultry">
+      <camed:documentation type="DBMapping">verify_FARMMARKET.Markets.Poultry</camed:documentation>
+    </camed:annotation>
+    <camed:annotation item="/FarmerMarketsLookup/FarmerMarketDetails/GoodsDetails/Prepared">
+      <camed:documentation type="DBMapping">verify_FARMMARKET.Markets.Prepared</camed:documentation>
+    </camed:annotation>
+    <camed:annotation item="/FarmerMarketsLookup/FarmerMarketDetails/GoodsDetails/Seafood">
+      <camed:documentation type="DBMapping">verify_FARMMARKET.Markets.Seafood</camed:documentation>
+    </camed:annotation>
+    <camed:annotation item="/FarmerMarketsLookup/FarmerMarketDetails/GoodsDetails/Soap">
+      <camed:documentation type="DBMapping">verify_FARMMARKET.Markets.Soap</camed:documentation>
+    </camed:annotation>
+    <camed:annotation item="/FarmerMarketsLookup/FarmerMarketDetails/GoodsDetails/Trees">
+      <camed:documentation type="DBMapping">verify_FARMMARKET.Markets.Trees</camed:documentation>
+    </camed:annotation>
+    <camed:annotation item="/FarmerMarketsLookup/FarmerMarketDetails/GoodsDetails/Vegetables">
+      <camed:documentation type="DBMapping">verify_FARMMARKET.Markets.Vegetables</camed:documentation>
+    </camed:annotation>
+    <camed:annotation item="/FarmerMarketsLookup/FarmerMarketDetails/GoodsDetails/Wine">
+      <camed:documentation type="DBMapping">verify_FARMMARKET.Markets.Wine</camed:documentation>
+    </camed:annotation>
+    <camed:annotation item="/FarmerMarketsLookup/FarmerMarketDetails/LocationDescription">
+      <camed:documentation type="DBMapping">verify_FARMMARKET.Markets.Location</camed:documentation>
+    </camed:annotation>
+    <camed:annotation item="/FarmerMarketsLookup/FarmerMarketDetails/Name">
+      <camed:documentation type="DBMapping">verify_FARMMARKET.Markets.MarketName</camed:documentation>
+    </camed:annotation>
+    <camed:annotation item="/FarmerMarketsLookup/FarmerMarketDetails/PaymentDetails/Credit">
+      <camed:documentation type="DBMapping">verify_FARMMARKET.Markets.Credit</camed:documentation>
+    </camed:annotation>
+    <camed:annotation item="/FarmerMarketsLookup/FarmerMarketDetails/PaymentDetails/SFMNP">
+      <camed:documentation type="DBMapping">verify_FARMMARKET.Markets.SFMNP</camed:documentation>
+    </camed:annotation>
+    <camed:annotation item="/FarmerMarketsLookup/FarmerMarketDetails/PaymentDetails/SNAP">
+      <camed:documentation type="DBMapping">verify_FARMMARKET.Markets.SNAP</camed:documentation>
+    </camed:annotation>
+    <camed:annotation item="/FarmerMarketsLookup/FarmerMarketDetails/PaymentDetails/WIC">
+      <camed:documentation type="DBMapping">verify_FARMMARKET.Markets.WIC</camed:documentation>
+    </camed:annotation>
+    <camed:annotation item="/FarmerMarketsLookup/FarmerMarketDetails/PaymentDetails/WICcash">
+      <camed:documentation type="DBMapping">verify_FARMMARKET.Markets.WICcash</camed:documentation>
+    </camed:annotation>
+    <camed:annotation item="/FarmerMarketsLookup/FarmerMarketDetails/Schedule">
+      <camed:documentation type="DBMapping">verify_FARMMARKET.Markets.Schedule</camed:documentation>
+    </camed:annotation>
+    <camed:annotation item="/FarmerMarketsLookup/FarmerMarketDetails/UID">
+      <camed:documentation type="DBMapping">verify_FARMMARKET.Markets.ID</camed:documentation>
+    </camed:annotation>
+    <camed:annotation item="/FarmerMarketsLookup/FarmerMarketDetails/URL">
+      <camed:documentation type="DBMapping">verify_FARMMARKET.Markets.Website</camed:documentation>
+    </camed:annotation>
+    <camed:annotation item="/FarmerMarketsLookup/FarmerMarketDetails/UpdatedDate">
+      <camed:documentation type="DBMapping">verify_FARMMARKET.Markets.updateTime</camed:documentation>
+    </camed:annotation>
+  </as:Extension>
+</as:CAM>

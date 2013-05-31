@@ -1,0 +1,363 @@
+<as:CAM
+ xmlns:as="http://www.oasis-open.org/committees/cam"
+ xmlns:camed="http://jcam.org.uk/editor"
+ xmlns:xs="http://www.w3.org/2001/XMLSchema" CAMlevel="1" version="1.1" cameditor="3.0.0">
+  <as:Header>
+    <as:Description>No Description</as:Description>
+    <as:Owner>Not Set</as:Owner>
+    <as:Version>0.1</as:Version>
+    <as:DateTime>2013-05-29T10:49:40</as:DateTime>
+  </as:Header>
+  <as:Namespaces>
+    <as:namespace prefix="xs">http://www.w3.org/2001/XMLSchema</as:namespace>
+    <as:namespace prefix="as">http://www.oasis-open.org/committees/cam</as:namespace>
+    <as:namespace prefix="xml">http://www.w3.org/XML/1998/namespace</as:namespace>
+    <as:namespace prefix="camed">http://jcam.org.uk/editor</as:namespace>
+  </as:Namespaces>
+  <as:Parameters>
+    <as:Parameter name="verify_FARMMARKET.Markets" default="Zip+in+%28%24ZIPSearch%29" use="dbmapping" />
+  </as:Parameters>
+  <as:AssemblyStructure>
+    <as:Structure ID="FMLookup" reference="" taxonomy="XML">
+      <as:parameters>
+        <as:Parameter name="verify_FARMMARKET.Markets" default="Zip+in+%28%24ZIPSearch%29" use="dbmapping" />
+      </as:parameters>
+      <as:Element name="FarmerMarketsLookup" path="/FarmerMarketsLookup" namespace="" namespacePrefix="">
+        <as:Rule>
+          <as:constraint action="makeMandatory()" />
+        </as:Rule>
+        <as:Element name="FarmerMarketDetails" path="/FarmerMarketsLookup/FarmerMarketDetails" namespace="" namespacePrefix="">
+          <as:Rule>
+            <as:constraint action="makeRepeatable()" xpath="//FarmerMarketsLookup/FarmerMarketDetails" />
+          </as:Rule>
+          <as:Element name="UID" path="/FarmerMarketsLookup/FarmerMarketDetails/UID" namespace="" namespacePrefix="" exampleValue="%12345%">
+            <as:Rule>
+              <as:constraint action="setNumberMask(#######)" xpath="//FarmerMarketDetails/UID" />
+            </as:Rule>
+            <camed:annotation item="/FarmerMarketsLookup/FarmerMarketDetails/UID">
+              <camed:documentation type="DBMapping">verify_FARMMARKET.Markets.ID</camed:documentation>
+            </camed:annotation>
+          </as:Element>
+          <as:Element name="Name" path="/FarmerMarketsLookup/FarmerMarketDetails/Name" namespace="" namespacePrefix="" exampleValue="%string%">
+            <as:Rule>
+              <as:constraint action="makeMandatory()" />
+            </as:Rule>
+            <camed:annotation item="/FarmerMarketsLookup/FarmerMarketDetails/Name">
+              <camed:documentation type="DBMapping">verify_FARMMARKET.Markets.MarketName</camed:documentation>
+            </camed:annotation>
+          </as:Element>
+          <as:Element name="URL" path="/FarmerMarketsLookup/FarmerMarketDetails/URL" namespace="" namespacePrefix="" exampleValue="%string%">
+            <as:Rule>
+              <as:constraint action="makeMandatory()" />
+            </as:Rule>
+            <camed:annotation item="/FarmerMarketsLookup/FarmerMarketDetails/URL">
+              <camed:documentation type="DBMapping">verify_FARMMARKET.Markets.Website</camed:documentation>
+            </camed:annotation>
+          </as:Element>
+          <as:Element name="Schedule" path="/FarmerMarketsLookup/FarmerMarketDetails/Schedule" namespace="" namespacePrefix="" exampleValue="%string%">
+            <as:Rule>
+              <as:constraint action="makeMandatory()" />
+            </as:Rule>
+            <camed:annotation item="/FarmerMarketsLookup/FarmerMarketDetails/Schedule">
+              <camed:documentation type="DBMapping">verify_FARMMARKET.Markets.Schedule</camed:documentation>
+            </camed:annotation>
+          </as:Element>
+          <as:Element name="LocationDescription" path="/FarmerMarketsLookup/FarmerMarketDetails/LocationDescription" namespace="" namespacePrefix="" exampleValue="%string%">
+            <as:Rule>
+              <as:constraint action="makeMandatory()" />
+            </as:Rule>
+            <camed:annotation item="/FarmerMarketsLookup/FarmerMarketDetails/LocationDescription">
+              <camed:documentation type="DBMapping">verify_FARMMARKET.Markets.Location</camed:documentation>
+            </camed:annotation>
+          </as:Element>
+          <as:Element name="AddressDetails" path="/FarmerMarketsLookup/FarmerMarketDetails/AddressDetails" namespace="" namespacePrefix="">
+            <as:Rule>
+              <as:constraint action="makeMandatory()" />
+            </as:Rule>
+            <as:Element name="Street" path="/FarmerMarketsLookup/FarmerMarketDetails/AddressDetails/Street" namespace="" namespacePrefix="" exampleValue="%string%">
+              <as:Rule>
+                <as:constraint action="makeMandatory()" />
+              </as:Rule>
+              <camed:annotation item="/FarmerMarketsLookup/FarmerMarketDetails/AddressDetails/Street">
+                <camed:documentation type="DBMapping">verify_FARMMARKET.Markets.Street</camed:documentation>
+              </camed:annotation>
+            </as:Element>
+            <as:Element name="City" path="/FarmerMarketsLookup/FarmerMarketDetails/AddressDetails/City" namespace="" namespacePrefix="" exampleValue="%string%">
+              <as:Rule>
+                <as:constraint action="makeMandatory()" />
+              </as:Rule>
+              <camed:annotation item="/FarmerMarketsLookup/FarmerMarketDetails/AddressDetails/City">
+                <camed:documentation type="DBMapping">verify_FARMMARKET.Markets.City</camed:documentation>
+              </camed:annotation>
+            </as:Element>
+            <as:Element name="County" path="/FarmerMarketsLookup/FarmerMarketDetails/AddressDetails/County" namespace="" namespacePrefix="" exampleValue="%string%">
+              <as:Rule>
+                <as:constraint action="makeMandatory()" />
+              </as:Rule>
+              <camed:annotation item="/FarmerMarketsLookup/FarmerMarketDetails/AddressDetails/County">
+                <camed:documentation type="DBMapping">verify_FARMMARKET.Markets.County</camed:documentation>
+              </camed:annotation>
+            </as:Element>
+            <as:Element name="State" path="/FarmerMarketsLookup/FarmerMarketDetails/AddressDetails/State" namespace="" namespacePrefix="" exampleValue="%string%">
+              <as:Rule>
+                <as:constraint action="makeMandatory()" />
+              </as:Rule>
+              <camed:annotation item="/FarmerMarketsLookup/FarmerMarketDetails/AddressDetails/State">
+                <camed:documentation type="DBMapping">verify_FARMMARKET.Markets.State</camed:documentation>
+              </camed:annotation>
+            </as:Element>
+            <as:Element name="Zip" path="/FarmerMarketsLookup/FarmerMarketDetails/AddressDetails/Zip" namespace="" namespacePrefix="" exampleValue="%string%">
+              <as:Rule>
+                <as:constraint action="makeMandatory()" />
+              </as:Rule>
+              <camed:annotation item="/FarmerMarketsLookup/FarmerMarketDetails/AddressDetails/Zip">
+                <camed:documentation type="DBMapping">verify_FARMMARKET.Markets.Zip</camed:documentation>
+              </camed:annotation>
+            </as:Element>
+            <as:Element name="Lat" path="/FarmerMarketsLookup/FarmerMarketDetails/AddressDetails/Lat" namespace="" namespacePrefix="" exampleValue="%124.12345678%">
+              <as:Rule>
+                <as:constraint action="setNumberMask(###.########)" xpath="//AddressDetails/Lat" />
+              </as:Rule>
+              <camed:annotation item="/FarmerMarketsLookup/FarmerMarketDetails/AddressDetails/Lat">
+                <camed:documentation type="DBMapping">verify_FARMMARKET.Markets.x</camed:documentation>
+              </camed:annotation>
+            </as:Element>
+            <as:Element name="Lng" path="/FarmerMarketsLookup/FarmerMarketDetails/AddressDetails/Lng" namespace="" namespacePrefix="" exampleValue="%124.12345678%">
+              <as:Rule>
+                <as:constraint action="setNumberMask(###.########)" xpath="//AddressDetails/Lng" />
+              </as:Rule>
+              <camed:annotation item="/FarmerMarketsLookup/FarmerMarketDetails/AddressDetails/Lng">
+                <camed:documentation type="DBMapping">verify_FARMMARKET.Markets.y</camed:documentation>
+              </camed:annotation>
+            </as:Element>
+          </as:Element>
+          <as:Element name="PaymentDetails" path="/FarmerMarketsLookup/FarmerMarketDetails/PaymentDetails" namespace="" namespacePrefix="">
+            <as:Rule>
+              <as:constraint action="makeMandatory()" />
+            </as:Rule>
+            <as:Element name="Credit" path="/FarmerMarketsLookup/FarmerMarketDetails/PaymentDetails/Credit" namespace="" namespacePrefix="" exampleValue="%string%">
+              <as:Rule>
+                <as:constraint action="lookup(YNList)" xpath="//PaymentDetails/Credit" />
+              </as:Rule>
+              <camed:annotation item="/FarmerMarketsLookup/FarmerMarketDetails/PaymentDetails/Credit">
+                <camed:documentation type="DBMapping">verify_FARMMARKET.Markets.Credit</camed:documentation>
+              </camed:annotation>
+            </as:Element>
+            <as:Element name="WIC" path="/FarmerMarketsLookup/FarmerMarketDetails/PaymentDetails/WIC" namespace="" namespacePrefix="" exampleValue="%string%">
+              <as:Rule>
+                <as:constraint action="lookup(YNList)" xpath="//PaymentDetails/WIC" />
+              </as:Rule>
+              <camed:annotation item="/FarmerMarketsLookup/FarmerMarketDetails/PaymentDetails/WIC">
+                <camed:documentation type="DBMapping">verify_FARMMARKET.Markets.WIC</camed:documentation>
+              </camed:annotation>
+            </as:Element>
+            <as:Element name="WICcash" path="/FarmerMarketsLookup/FarmerMarketDetails/PaymentDetails/WICcash" namespace="" namespacePrefix="" exampleValue="%string%">
+              <as:Rule>
+                <as:constraint action="lookup(YNList)" xpath="//PaymentDetails/WICcash" />
+              </as:Rule>
+              <camed:annotation item="/FarmerMarketsLookup/FarmerMarketDetails/PaymentDetails/WICcash">
+                <camed:documentation type="DBMapping">verify_FARMMARKET.Markets.WICcash</camed:documentation>
+              </camed:annotation>
+            </as:Element>
+            <as:Element name="SFMNP" path="/FarmerMarketsLookup/FarmerMarketDetails/PaymentDetails/SFMNP" namespace="" namespacePrefix="" exampleValue="%string%">
+              <as:Rule>
+                <as:constraint action="lookup(YNList)" xpath="//PaymentDetails/SFMNP" />
+              </as:Rule>
+              <camed:annotation item="/FarmerMarketsLookup/FarmerMarketDetails/PaymentDetails/SFMNP">
+                <camed:documentation type="DBMapping">verify_FARMMARKET.Markets.SFMNP</camed:documentation>
+              </camed:annotation>
+            </as:Element>
+            <as:Element name="SNAP" path="/FarmerMarketsLookup/FarmerMarketDetails/PaymentDetails/SNAP" namespace="" namespacePrefix="" exampleValue="%string%">
+              <as:Rule>
+                <as:constraint action="lookup(YNList)" xpath="//PaymentDetails/SNAP" />
+              </as:Rule>
+              <camed:annotation item="/FarmerMarketsLookup/FarmerMarketDetails/PaymentDetails/SNAP">
+                <camed:documentation type="DBMapping">verify_FARMMARKET.Markets.SNAP</camed:documentation>
+              </camed:annotation>
+            </as:Element>
+          </as:Element>
+          <as:Element name="GoodsDetails" path="/FarmerMarketsLookup/FarmerMarketDetails/GoodsDetails" namespace="" namespacePrefix="">
+            <as:Rule>
+              <as:constraint action="makeMandatory()" />
+            </as:Rule>
+            <as:Element name="Bakedgoods" path="/FarmerMarketsLookup/FarmerMarketDetails/GoodsDetails/Bakedgoods" namespace="" namespacePrefix="" exampleValue="%string%">
+              <as:Rule>
+                <as:constraint action="lookup(YNList)" xpath="//GoodsDetails/Bakedgoods" />
+              </as:Rule>
+              <camed:annotation item="/FarmerMarketsLookup/FarmerMarketDetails/GoodsDetails/Bakedgoods">
+                <camed:documentation type="DBMapping">verify_FARMMARKET.Markets.Bakedgoods</camed:documentation>
+              </camed:annotation>
+            </as:Element>
+            <as:Element name="Cheese" path="/FarmerMarketsLookup/FarmerMarketDetails/GoodsDetails/Cheese" namespace="" namespacePrefix="" exampleValue="%string%">
+              <as:Rule>
+                <as:constraint action="lookup(YNList)" xpath="//GoodsDetails/Cheese" />
+              </as:Rule>
+              <camed:annotation item="/FarmerMarketsLookup/FarmerMarketDetails/GoodsDetails/Cheese">
+                <camed:documentation type="DBMapping">verify_FARMMARKET.Markets.Cheese</camed:documentation>
+              </camed:annotation>
+            </as:Element>
+            <as:Element name="Crafts" path="/FarmerMarketsLookup/FarmerMarketDetails/GoodsDetails/Crafts" namespace="" namespacePrefix="" exampleValue="%string%">
+              <as:Rule>
+                <as:constraint action="lookup(YNList)" xpath="//GoodsDetails/Crafts" />
+              </as:Rule>
+              <camed:annotation item="/FarmerMarketsLookup/FarmerMarketDetails/GoodsDetails/Crafts">
+                <camed:documentation type="DBMapping">verify_FARMMARKET.Markets.Crafts</camed:documentation>
+              </camed:annotation>
+            </as:Element>
+            <as:Element name="Flowers" path="/FarmerMarketsLookup/FarmerMarketDetails/GoodsDetails/Flowers" namespace="" namespacePrefix="" exampleValue="%string%">
+              <as:Rule>
+                <as:constraint action="lookup(YNList)" xpath="//GoodsDetails/Flowers" />
+              </as:Rule>
+              <camed:annotation item="/FarmerMarketsLookup/FarmerMarketDetails/GoodsDetails/Flowers">
+                <camed:documentation type="DBMapping">verify_FARMMARKET.Markets.Flowers</camed:documentation>
+              </camed:annotation>
+            </as:Element>
+            <as:Element name="Eggs" path="/FarmerMarketsLookup/FarmerMarketDetails/GoodsDetails/Eggs" namespace="" namespacePrefix="" exampleValue="%string%">
+              <as:Rule>
+                <as:constraint action="lookup(YNList)" xpath="//GoodsDetails/Eggs" />
+              </as:Rule>
+              <camed:annotation item="/FarmerMarketsLookup/FarmerMarketDetails/GoodsDetails/Eggs">
+                <camed:documentation type="DBMapping">verify_FARMMARKET.Markets.Eggs</camed:documentation>
+              </camed:annotation>
+            </as:Element>
+            <as:Element name="Seafood" path="/FarmerMarketsLookup/FarmerMarketDetails/GoodsDetails/Seafood" namespace="" namespacePrefix="" exampleValue="%string%">
+              <as:Rule>
+                <as:constraint action="lookup(YNList)" xpath="//GoodsDetails/Seafood" />
+              </as:Rule>
+              <camed:annotation item="/FarmerMarketsLookup/FarmerMarketDetails/GoodsDetails/Seafood">
+                <camed:documentation type="DBMapping">verify_FARMMARKET.Markets.Seafood</camed:documentation>
+              </camed:annotation>
+            </as:Element>
+            <as:Element name="Herbs" path="/FarmerMarketsLookup/FarmerMarketDetails/GoodsDetails/Herbs" namespace="" namespacePrefix="" exampleValue="%string%">
+              <as:Rule>
+                <as:constraint action="lookup(YNList)" xpath="//GoodsDetails/Herbs" />
+              </as:Rule>
+              <camed:annotation item="/FarmerMarketsLookup/FarmerMarketDetails/GoodsDetails/Herbs">
+                <camed:documentation type="DBMapping">verify_FARMMARKET.Markets.Herbs</camed:documentation>
+              </camed:annotation>
+            </as:Element>
+            <as:Element name="Vegetables" path="/FarmerMarketsLookup/FarmerMarketDetails/GoodsDetails/Vegetables" namespace="" namespacePrefix="" exampleValue="%string%">
+              <as:Rule>
+                <as:constraint action="lookup(YNList)" xpath="//GoodsDetails/Vegetables" />
+              </as:Rule>
+              <camed:annotation item="/FarmerMarketsLookup/FarmerMarketDetails/GoodsDetails/Vegetables">
+                <camed:documentation type="DBMapping">verify_FARMMARKET.Markets.Vegetables</camed:documentation>
+              </camed:annotation>
+            </as:Element>
+            <as:Element name="Honey" path="/FarmerMarketsLookup/FarmerMarketDetails/GoodsDetails/Honey" namespace="" namespacePrefix="" exampleValue="%string%">
+              <as:Rule>
+                <as:constraint action="lookup(YNList)" xpath="//GoodsDetails/Honey" />
+              </as:Rule>
+              <camed:annotation item="/FarmerMarketsLookup/FarmerMarketDetails/GoodsDetails/Honey">
+                <camed:documentation type="DBMapping">verify_FARMMARKET.Markets.Honey</camed:documentation>
+              </camed:annotation>
+            </as:Element>
+            <as:Element name="Jams" path="/FarmerMarketsLookup/FarmerMarketDetails/GoodsDetails/Jams" namespace="" namespacePrefix="" exampleValue="%string%">
+              <as:Rule>
+                <as:constraint action="lookup(YNList)" xpath="//GoodsDetails/Jams" />
+              </as:Rule>
+              <camed:annotation item="/FarmerMarketsLookup/FarmerMarketDetails/GoodsDetails/Jams">
+                <camed:documentation type="DBMapping">verify_FARMMARKET.Markets.Jams</camed:documentation>
+              </camed:annotation>
+            </as:Element>
+            <as:Element name="Maple" path="/FarmerMarketsLookup/FarmerMarketDetails/GoodsDetails/Maple" namespace="" namespacePrefix="" exampleValue="%string%">
+              <as:Rule>
+                <as:constraint action="lookup(YNList)" xpath="//GoodsDetails/Maple" />
+              </as:Rule>
+              <camed:annotation item="/FarmerMarketsLookup/FarmerMarketDetails/GoodsDetails/Maple">
+                <camed:documentation type="DBMapping">verify_FARMMARKET.Markets.Maple</camed:documentation>
+              </camed:annotation>
+            </as:Element>
+            <as:Element name="Meat" path="/FarmerMarketsLookup/FarmerMarketDetails/GoodsDetails/Meat" namespace="" namespacePrefix="" exampleValue="%string%">
+              <as:Rule>
+                <as:constraint action="lookup(YNList)" xpath="//GoodsDetails/Meat" />
+              </as:Rule>
+              <camed:annotation item="/FarmerMarketsLookup/FarmerMarketDetails/GoodsDetails/Meat">
+                <camed:documentation type="DBMapping">verify_FARMMARKET.Markets.Meat</camed:documentation>
+              </camed:annotation>
+            </as:Element>
+            <as:Element name="Nursery" path="/FarmerMarketsLookup/FarmerMarketDetails/GoodsDetails/Nursery" namespace="" namespacePrefix="" exampleValue="%string%">
+              <as:Rule>
+                <as:constraint action="lookup(YNList)" xpath="//GoodsDetails/Nursery" />
+              </as:Rule>
+              <camed:annotation item="/FarmerMarketsLookup/FarmerMarketDetails/GoodsDetails/Nursery">
+                <camed:documentation type="DBMapping">verify_FARMMARKET.Markets.Nursery</camed:documentation>
+              </camed:annotation>
+            </as:Element>
+            <as:Element name="Nuts" path="/FarmerMarketsLookup/FarmerMarketDetails/GoodsDetails/Nuts" namespace="" namespacePrefix="" exampleValue="%string%">
+              <as:Rule>
+                <as:constraint action="lookup(YNList)" xpath="//GoodsDetails/Nuts" />
+              </as:Rule>
+              <camed:annotation item="/FarmerMarketsLookup/FarmerMarketDetails/GoodsDetails/Nuts">
+                <camed:documentation type="DBMapping">verify_FARMMARKET.Markets.Nuts</camed:documentation>
+              </camed:annotation>
+            </as:Element>
+            <as:Element name="Plants" path="/FarmerMarketsLookup/FarmerMarketDetails/GoodsDetails/Plants" namespace="" namespacePrefix="" exampleValue="%string%">
+              <as:Rule>
+                <as:constraint action="lookup(YNList)" xpath="//GoodsDetails/Plants" />
+              </as:Rule>
+              <camed:annotation item="/FarmerMarketsLookup/FarmerMarketDetails/GoodsDetails/Plants">
+                <camed:documentation type="DBMapping">verify_FARMMARKET.Markets.Plants</camed:documentation>
+              </camed:annotation>
+            </as:Element>
+            <as:Element name="Poultry" path="/FarmerMarketsLookup/FarmerMarketDetails/GoodsDetails/Poultry" namespace="" namespacePrefix="" exampleValue="%string%">
+              <as:Rule>
+                <as:constraint action="lookup(YNList)" xpath="//GoodsDetails/Poultry" />
+              </as:Rule>
+              <camed:annotation item="/FarmerMarketsLookup/FarmerMarketDetails/GoodsDetails/Poultry">
+                <camed:documentation type="DBMapping">verify_FARMMARKET.Markets.Poultry</camed:documentation>
+              </camed:annotation>
+            </as:Element>
+            <as:Element name="Prepared" path="/FarmerMarketsLookup/FarmerMarketDetails/GoodsDetails/Prepared" namespace="" namespacePrefix="" exampleValue="%string%">
+              <as:Rule>
+                <as:constraint action="lookup(YNList)" xpath="//GoodsDetails/Prepared" />
+              </as:Rule>
+              <camed:annotation item="/FarmerMarketsLookup/FarmerMarketDetails/GoodsDetails/Prepared">
+                <camed:documentation type="DBMapping">verify_FARMMARKET.Markets.Prepared</camed:documentation>
+              </camed:annotation>
+            </as:Element>
+            <as:Element name="Soap" path="/FarmerMarketsLookup/FarmerMarketDetails/GoodsDetails/Soap" namespace="" namespacePrefix="" exampleValue="%string%">
+              <as:Rule>
+                <as:constraint action="lookup(YNList)" xpath="//GoodsDetails/Soap" />
+              </as:Rule>
+              <camed:annotation item="/FarmerMarketsLookup/FarmerMarketDetails/GoodsDetails/Soap">
+                <camed:documentation type="DBMapping">verify_FARMMARKET.Markets.Soap</camed:documentation>
+              </camed:annotation>
+            </as:Element>
+            <as:Element name="Trees" path="/FarmerMarketsLookup/FarmerMarketDetails/GoodsDetails/Trees" namespace="" namespacePrefix="" exampleValue="%string%">
+              <as:Rule>
+                <as:constraint action="lookup(YNList)" xpath="//GoodsDetails/Trees" />
+              </as:Rule>
+              <camed:annotation item="/FarmerMarketsLookup/FarmerMarketDetails/GoodsDetails/Trees">
+                <camed:documentation type="DBMapping">verify_FARMMARKET.Markets.Trees</camed:documentation>
+              </camed:annotation>
+            </as:Element>
+            <as:Element name="Wine" path="/FarmerMarketsLookup/FarmerMarketDetails/GoodsDetails/Wine" namespace="" namespacePrefix="" exampleValue="%string%">
+              <as:Rule>
+                <as:constraint action="lookup(YNList)" xpath="//GoodsDetails/Wine" />
+              </as:Rule>
+              <camed:annotation item="/FarmerMarketsLookup/FarmerMarketDetails/GoodsDetails/Wine">
+                <camed:documentation type="DBMapping">verify_FARMMARKET.Markets.Wine</camed:documentation>
+              </camed:annotation>
+            </as:Element>
+          </as:Element>
+          <as:Element name="UpdatedDate" path="/FarmerMarketsLookup/FarmerMarketDetails/UpdatedDate" namespace="" namespacePrefix="" exampleValue="%string%">
+            <as:Rule>
+              <as:constraint action="makeMandatory()" />
+            </as:Rule>
+            <camed:annotation item="/FarmerMarketsLookup/FarmerMarketDetails/UpdatedDate">
+              <camed:documentation type="DBMapping">verify_FARMMARKET.Markets.updateTime</camed:documentation>
+            </camed:annotation>
+          </as:Element>
+        </as:Element>
+      </as:Element>
+    </as:Structure>
+  </as:AssemblyStructure>
+  <as:Extension name="uk.org.jcam.camed.extensions.LookupLists">
+    <look:LookupList
+ xmlns:look="http://jcam.org.uk/LookupLists" name="YNList">
+      <look:item name="N">N</look:item>
+      <look:item name="Y">Y</look:item>
+    </look:LookupList>
+  </as:Extension>
+</as:CAM>

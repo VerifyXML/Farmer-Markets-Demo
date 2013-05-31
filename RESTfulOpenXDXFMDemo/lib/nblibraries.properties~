@@ -1,0 +1,42 @@
+libs.CopyLibs.classpath=\
+    ${base}/CopyLibs/org-netbeans-modules-java-j2seproject-copylibstask.jar
+libs.CopyLibs.displayName=CopyLibs Task
+libs.CopyLibs.prop-version=1.0
+libs.GlassFish\ Server\ 3.1.2\ Jersey.classpath=\
+    ${base}/GlassFish Server 3.1.2 Jersey/jersey-gf-servlet.jar:\
+    ${base}/GlassFish Server 3.1.2 Jersey/jackson-xc.jar:\
+    ${base}/GlassFish Server 3.1.2 Jersey/mimepull.jar:\
+    ${base}/GlassFish Server 3.1.2 Jersey/jersey-json.jar:\
+    ${base}/GlassFish Server 3.1.2 Jersey/jackson-mapper-asl.jar:\
+    ${base}/GlassFish Server 3.1.2 Jersey/jersey-core.jar:\
+    ${base}/GlassFish Server 3.1.2 Jersey/jersey-gf-statsproviders.jar:\
+    ${base}/GlassFish Server 3.1.2 Jersey/jersey-gf-server.jar:\
+    ${base}/GlassFish Server 3.1.2 Jersey/jackson-core-asl.jar:\
+    ${base}/GlassFish Server 3.1.2 Jersey/asm-all-repackaged.jar:\
+    ${base}/GlassFish Server 3.1.2 Jersey/jackson-jaxrs.jar:\
+    ${base}/GlassFish Server 3.1.2 Jersey/jettison.jar:\
+    ${base}/GlassFish Server 3.1.2 Jersey/jersey-multipart.jar:\
+    ${base}/GlassFish Server 3.1.2 Jersey/jersey-client.jar:\
+    ${base}/GlassFish Server 3.1.2 Jersey/jersey-grizzly.jar:\
+    ${base}/GlassFish Server 3.1.2 Jersey/jersey-moxy.jar
+libs.GlassFish\ Server\ 3.1.2\ Jersey.prop-maven-dependencies=com.sun.jersey.glassfish.v3.osgi:jersey-gf-servlet:1.11.1:jar org.jvnet.mimepull:mimepull:1.8:jar com.sun.jersey:jersey-json:1.11.1:jar com.sun.jersey:jersey-core:1.11.1:jar com.sun.jersey.glassfish.v3.osgi:jersey-gf-statsproviders:1.11.1:jar com.sun.jersey.glassfish.v3.osgi:jersey-gf-server:1.11.1:jar org.glassfish.hk2.external:asm-all-repackaged:1.1.15:jar org.codehaus.jettison:jettison:1.1:jar com.sun.jersey.contribs:jersey-multipart:1.11.1:jar com.sun.jersey:jersey-client:1.11.1:jar com.sun.jersey:jersey-grizzly:1.11.1:jar com.sun.jersey.contribs:jersey-moxy:1.11.1:jar
+libs.GlassFish\ Server\ 3.1.2\ Jersey.prop-maven-repositories=default
+libs.javaee-endorsed-api-6.0.classpath=\
+    ${base}/javaee-endorsed-api-6.0/javax.annotation.jar:\
+    ${base}/javaee-endorsed-api-6.0/jaxb-api-osgi.jar:\
+    ${base}/javaee-endorsed-api-6.0/webservices-api-osgi.jar
+libs.javaee-endorsed-api-6.0.displayName=Java EE 6 Endorsed API Library
+libs.javaee-endorsed-api-6.0.javadoc=\
+    ${base}/javaee-endorsed-api-6.0/javaee6-doc-api.zip
+libs.OpenXDX.classpath=\
+    ${base}/OpenXDX/open-xdx-0.1.jar:\
+    ${base}/OpenXDX/saxon9-s9api.jar:\
+    ${base}/OpenXDX/saxon9-xpath.jar:\
+    ${base}/OpenXDX/saxon9.jar:\
+    ${base}/OpenXDX/saxon9-dom.jar
+libs.OpenXDX.javadoc=\
+    ${base}/OpenXDX/doc/
+libs.StAXON.classpath=\
+    ${base}/StAXON/staxon-1.2.jar
+libs.StAXON.javadoc=\
+    ${base}/StAXON/staxon-1.2-javadoc.jar!//
